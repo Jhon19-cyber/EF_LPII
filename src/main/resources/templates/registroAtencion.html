@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Atención</title>
+</head>
+<body>
+    <h2>Registrar Atención Médica</h2>
+    <form th:action="@{/historial/registro}" th:object="${historialMedico}" method="post">
+        <label for="paciente">Paciente:</label>
+        <input type="text" id="paciente" th:field="*{paciente.id}" required/><br>
+
+        <label for="medico">Médico:</label>
+        <input type="text" id="medico" th:field="*{medico.id}" required/><br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" th:field="*{fecha}" required/><br>
+
+        <label for="diagnostico">Diagnóstico:</label>
+        <textarea id="diagnostico" th:field="*{diagnostico}" required></textarea><br>
+
+        <label for="radiografias">Radiografías:</label>
+        <textarea id="radiografias" th:field="*{radiografias}"></textarea><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    
+</body>
+</html>
+

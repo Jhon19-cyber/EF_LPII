@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro de Pacientes</title>
+</head>
+<body>
+    <h1>Registro de Pacientes</h1>
+    <form th:action="@{/pacientes/registrar}" th:object="${paciente}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required/><br/>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" th:field="*{direccion}"/><br/>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" th:field="*{telefono}"/><br/>
+
+        <label for="correoElectronico">Correo Electrónico:</label>
+        <input type="email" id="correoElectronico" th:field="*{correoElectronico}"/><br/>
+
+        <label for="historialOdontologico">Historial Odontológico:</label>
+        <textarea id="historialOdontologico" th:field="*{historialOdontologico}"></textarea><br/>
+
+        <label for="alergias">Alergias:</label>
+        <textarea id="alergias" th:field="*{alergias}"></textarea><br/>
+
+        <label for="tratamientosPrevios">Tratamientos Previos:</label>
+        <textarea id="tratamientosPrevios" th:field="*{tratamientosPrevios}"></textarea><br/>
+
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>
